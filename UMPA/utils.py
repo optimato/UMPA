@@ -404,7 +404,7 @@ def prep_simul(sample_shift=False, steps=25, step_size=4, profile='flat',
         np.random.seed(11)
         speckle += 1j * ndi.gaussian_filter(np.random.normal(size=shape), ssize / psize)
     else:
-        speckle = np.ones(shape, dtype=np.complex)
+        speckle = np.ones(shape, dtype=complex)
     
     yy, xx = np.indices(shape)
     
@@ -446,7 +446,7 @@ def prep_simul(sample_shift=False, steps=25, step_size=4, profile='flat',
         print(f'Object type "{obj}" not recognized.')
         return
     if profile=='flat':
-        wf_flat = np.ones(shape, dtype=np.complex)
+        wf_flat = np.ones(shape, dtype=complex)
     elif profile=='gauss':
         sigma0, sigma1 = 0.5 * shape[0], 0.5 * shape[1]
         wf_flat = np.exp(-0.5 * (((xx - np.mean(xx)) / sigma1)**2 +
