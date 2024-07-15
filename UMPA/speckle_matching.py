@@ -41,9 +41,9 @@ def match(Isample, Iref, Nw, mask=None, step=1, max_shift=4, df=True):
         Iref = [x.copy() for x in Iref]
 
     if df:
-        PM = model.UMPAModelNoDF(sam_list=Isample, ref_list=Iref, mask_list=mask, window_size=Nw)
-    else:
         PM = model.UMPAModelDF(sam_list=Isample, ref_list=Iref, mask_list=mask, window_size=Nw)
+    else:
+        PM = model.UMPAModelNoDF(sam_list=Isample, ref_list=Iref, mask_list=mask, window_size=Nw)
 
     return PM.match(step=step)
 
