@@ -16,6 +16,13 @@ A publication describing and explaining this work can be found at
 ## Installation instructions
 In the current state, this repository is only compatible with Linux, and has only been tested with the `gcc` / `g++` compiler.
 
+### Error with latest Cython version
+
+The latest release of Cython seems to be causing some issues with the install process which we are investigating. In the meantime, reverting to an older version seems to help:
+```
+pip install Cython==0.29.37 --force-reinstall
+```
+
 ### Linux
 
 Installation via
